@@ -73,6 +73,72 @@ public class Recursion extends JPanel implements ActionListener{
 	}
 	}
 	
+	public void loopy1(Graphics g, int width, int x, int y) {
+	g.drawLine(x, y, x+300,y+300);	
+
+	if(x==900) return ;
+	
+	else {
+		//count(0) == 3
+	g.drawOval(x,y, width, width);
+	loopy1(g,width, x+100,y+100);
+	
+	}
+	}
+	public void loopy2(Graphics g, int width, int x, int y) {
+		
+	g.drawLine(x, y, x-300,y+300);	
+
+	if(x==600) return ;
+		
+	else {
+			//count(0) == 3
+	g.drawOval(x,y, width, width);
+	loopy2(g,width, x-100,y+100);
+		
+		}	
+	}
+	
+	public void loopy3(Graphics g, int width, int x, int y) {
+		
+//	if() return ;
+	
+	//else {
+	g.drawLine(x, y, x-300,y-300);		
+	
+	//}
+		
+		
+	}
+	
+	public void loopy4(Graphics g, int width, int x, int y) {
+		
+	//if(count == 0) return ;
+	
+	//else {
+	g.drawLine(x, y, x+300,y-300);		
+	
+	//}
+		
+		
+	}
+	
+	
+	public void tree(Graphics g, int count, int x, int y, int x2, int y2) {
+	
+	if(count == 0) return; 
+	
+	else {
+	int c = x2/2;
+	y = y2;
+	g.drawLine(x+c, y, x2-c, y2/2);
+		
+	
+	
+	}
+		
+	
+	}
 	
 	
 	public void clover(Graphics g) { //What additional variables will you need to draw the shape?
@@ -96,6 +162,16 @@ public class Recursion extends JPanel implements ActionListener{
 		g.setColor(Color.pink);		
 		this.squares(g,5, 220,300, 200);
 		
+		g.setColor(Color.green);
+		this.tree(g, 3, 1000, 900, 1000, 500);
+		
+		//loopy1(Graphics g, int width, int x, int y) {
+		g.setColor(Color.blue);
+		this.loopy1(g, 600, 400+100, 100+100);
+		this.loopy2(g, 600, 700+200, 400+200);
+		//this.loopy3(g,600, 400+200, 700+200);
+		//this.loopy4(g, 600, 100+200, 400+200);
+
 	} //my code should go above this bracket unless I know about classes
 	
 	public static void main(String[] arg) {
