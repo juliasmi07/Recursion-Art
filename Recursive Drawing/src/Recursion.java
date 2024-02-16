@@ -74,40 +74,40 @@ public class Recursion extends JPanel implements ActionListener{
 	}
 	
 	public void loopy1(Graphics g, int width, int x, int y) {
-	g.drawLine(x, y, x+300,y+300);	
 
-	if(x==900) return ;
+	if(x==700) return ;
 	
 	else {
 		//count(0) == 3
 	g.drawOval(x,y, width, width);
-	loopy1(g,width, x+100,y+100);
+	loopy1(g,width-5, x+25,y+25);
 	
 	}
+	//g.drawLine(x, y, x+300,y+300);	//100, 300 , 400, 600
+
 	}
 	public void loopy2(Graphics g, int width, int x, int y) {
 		
-	g.drawLine(x, y, x-300,y+300);	
+	//g.drawLine(x, y, x-300,y+300);	//
 
 	if(x==600) return ;
 		
 	else {
 			//count(0) == 3
 	g.drawOval(x,y, width, width);
-	loopy2(g,width, x-100,y+100);
+	loopy2(g,width-10, x-25,y+25);
 		
 		}	
 	}
 	
 	public void loopy3(Graphics g, int width, int x, int y) {
 		
-//	if() return ;
+	if(x==600) return ;
 	
-	//else {
-	g.drawLine(x, y, x-300,y-300);		
-	
-	//}
-		
+	else {
+	g.drawOval(x, y, width,width);	
+	loopy3(g, width -20, x-25, y-25);
+	}
 		
 	}
 	
@@ -167,9 +167,13 @@ public class Recursion extends JPanel implements ActionListener{
 		
 		//loopy1(Graphics g, int width, int x, int y) {
 		g.setColor(Color.blue);
-		this.loopy1(g, 600, 400+100, 100+100);
-		this.loopy2(g, 600, 700+200, 400+200);
-		//this.loopy3(g,600, 400+200, 700+200);
+		this.loopy1(g, 100, 600, 200); 
+		
+		//	loopy2(g,width-10, x-25,y+25);
+
+		this.loopy2(g, 100, 700, 300);
+		
+		this.loopy3(g,100, 600, 400);
 		//this.loopy4(g, 600, 100+200, 400+200);
 
 	} //my code should go above this bracket unless I know about classes
